@@ -8,7 +8,7 @@ function start(){
 
 recognition.onresult=function(event){
     console.log(event);
-    var Content=event.reasults[0][0].transcript;
+    var Content=event.results[0][0].transcript;
     document.getElementById("textbox").innerHTML=Content;
     console.log(Content);
     if (Content=="take my selfie"){
@@ -29,14 +29,12 @@ function speak(){ var synth = window.speechSynthesis;
  }
 
  camera=document.getElementById("camera");
- Webcam.set(
-    {
+ Webcam.set({
         width:360, 
         height:250, 
         image_format : 'jpeg', 
         jpeg_quality:90
-    }
- );
+    });
 
  function take_snapshot() { 
     Webcam.snap(function(data_uri) { 
